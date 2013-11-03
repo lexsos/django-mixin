@@ -1,0 +1,4 @@
+*.log
+*.pot
+*.pyc
+django_mixin.egg-info
