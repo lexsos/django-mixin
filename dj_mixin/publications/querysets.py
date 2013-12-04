@@ -6,10 +6,10 @@ from django.utils import timezone
 class PublicationQuerySet(query.QuerySet):
 
     def expired(self):
-        return self.filter(publication_end_date__lt=timezone.now())
+        return self.filter(pub_date_end__lt=timezone.now())
 
     def future(self):
-        return self.filter(publication_start_date__gt=timezone.now())
+        return self.filter(pub_date_start__gt=timezone.now())
 
     def enabled(self):
         return self.filter(enabled=True)
@@ -25,7 +25,7 @@ class PublicationQuerySet(query.QuerySet):
 
     def _published_query(self):
         now = timezone.now()
-        q = Q(publication_end_date__gte=now)|Q(publication_end_date=None)
-        q &= Q(publication_start_date__lte=now)
+        q = Q(pub_date_end__gte=now)|Q(pub_date_end=None)
+        q &= Q(pub_date_start__lte=now)
         q &= Q(enabled=True)
         return q

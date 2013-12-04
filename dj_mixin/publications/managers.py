@@ -2,7 +2,7 @@ from django.db import models
 from .querysets import PublicationQuerySet
 
 
-class PublicationManager(object):
+class PublicationManager(models.Manager):
 
     def expired(self):
         return self.get_query_set().expired()
