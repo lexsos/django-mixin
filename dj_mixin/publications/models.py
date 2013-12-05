@@ -19,22 +19,24 @@ class Publication(models.Model):
         verbose_name=_('start date for publication'),
         default=timezone.now,
         db_index=True,
-        help_text=_(
-            'Rocord will be visible form this date.'
-        ),
+        help_text=_('Rocord will be visible form this date.'),
     )
     pub_date_end = models.DateTimeField(
         verbose_name=_('end date for publication'),
         null=True,
         blank=True,
         db_index=True,
-        help_text=_(
-            'Rocord will be invisible form this date.'
-        ),
+        help_text=_('Rocord will be invisible form this date.'),
+    )
+    weight = models.PositiveIntegerField(
+        verbose_name=_('weight of publication'),
+        db_index=True,
+        default=0,
+        help_text=_('Rocord will be first with greate weight.'),
     )
 
     objects = PublicationManager()
 
     class Meta:
         abstract = True
-        ordering = ['-pub_date_start']
+        ordering = ['-weight', '-pub_date_start']

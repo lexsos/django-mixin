@@ -25,7 +25,22 @@ class EnabledMixin(object):
         return actions
 
 
-class PublicationAdmin(EnabledMixin, admin.ModelAdmin):
+class WeightMixin(object):
+
+    def zero_weight(self, request, queryset):
+        queryset.update(weight=0)
+
+    def get_actions(self, request):
+        actions = super(WeightMixin, self).get_actions(request)
+        if not 'zero_weight' in actions:
+            action = (WeightMixin.zero_weight,
+                      'zero_weight',
+                      _('Set weight to 0 on selected %(verbose_name_plural)s'))
+            actions['zero_weight'] = action
+        return actions
+
+
+class PublicationAdmin(EnabledMixin, WeightMixin, admin.ModelAdmin):
 
     list_filter = ('enabled', 'pub_date_start')
     list_display = ('enabled', 'pub_date_start', 'pub_date_end')
