@@ -42,7 +42,17 @@ class WeightMixin(object):
 
 class PublicationAdmin(EnabledMixin, WeightMixin, admin.ModelAdmin):
 
-    list_filter = ('enabled', 'pub_date_start')
-    list_display = ('enabled', 'pub_date_start', 'pub_date_end')
+    list_filter = ('enabled', 'pub_date_start', 'weight')
+    list_display = ('enabled', 'pub_date_start', 'pub_date_end', 'weight')
     list_per_page = 30
     date_hierarchy = 'pub_date_start'
+
+    fieldsets = (
+        (_('Publication parameters'), {
+            'classes': ('wide',),
+            'fields': ('enabled',
+                       'pub_date_start',
+                       'pub_date_end',
+                       'weight')
+        }),
+    )

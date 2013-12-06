@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-05 10:20+0400\n"
+"POT-Creation-Date: 2013-12-06 08:52+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,6 +33,10 @@ msgstr "Отключить выбранные %(verbose_name_plural)s"
 #, python-format
 msgid "Set weight to 0 on selected %(verbose_name_plural)s"
 msgstr "Установить вес в 0 у выбранных %(verbose_name_plural)s"
+
+#: admin.py:51
+msgid "Publication parameters"
+msgstr "Параметры публикации"
 
 #: models.py:13
 msgid "enabled"
