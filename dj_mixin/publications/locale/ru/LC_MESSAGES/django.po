@@ -22,46 +22,46 @@ msgstr ""
 #: admin.py:18
 #, python-format
 msgid "Enable selected %(verbose_name_plural)s"
-msgstr ""
+msgstr "Включить выбранные %(verbose_name_plural)s"
 
 #: admin.py:23
 #, python-format
 msgid "Disable selected %(verbose_name_plural)s"
-msgstr ""
+msgstr "Отключить выбранные %(verbose_name_plural)s"
 
 #: admin.py:38
 #, python-format
 msgid "Set weight to 0 on selected %(verbose_name_plural)s"
-msgstr ""
+msgstr "Установить вес в 0 у выбранных %(verbose_name_plural)s"
 
 #: models.py:13
 msgid "enabled"
-msgstr ""
+msgstr "включено"
 
 #: models.py:16
 msgid "show/hide record."
-msgstr ""
+msgstr "показать/скрыть"
 
 #: models.py:19
 msgid "start date for publication"
-msgstr ""
+msgstr "дата начала публикации"
 
 #: models.py:22
 msgid "Rocord will be visible form this date."
-msgstr ""
+msgstr "Будет отображаться начиная с указанной даты"
 
 #: models.py:25
 msgid "end date for publication"
-msgstr ""
+msgstr "дата конца публикации"
 
 #: models.py:29
 msgid "Rocord will be invisible form this date."
-msgstr ""
+msgstr "Будет скрыто начиная с указанной даты"
 
 #: models.py:32
 msgid "weight of publication"
-msgstr ""
+msgstr "вес"
 
 #: models.py:35
 msgid "Rocord will be first with greate weight."
-msgstr ""
+msgstr "Запись с большим весом будет первой"
